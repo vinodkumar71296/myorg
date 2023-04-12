@@ -1,0 +1,58 @@
+<template>
+  <template if:true={isvisible}>
+    <lightning-card>
+        <div class="slds-p-around_large" >
+            <h3 class="slds-text-heading_medium"><lightning-icon icon-name="custom:custom107" size="small"></lightning-icon> <strong style="color:#270086; font-size:13px; margin-right:5px;"> How to disable the input fields on button click in LWC  </strong> </h3>        
+            <br/>
+ 
+ 
+            <div class="slds-form-element slds-m-bottom--small" >               
+                <div class="slds-form-element__control">
+                    <lightning-input type="text" label="Name" disabled={disableBtn} ></lightning-input>
+                </div>
+              </div>
+ 
+              <div class="slds-form-element slds-m-bottom--small">               
+                <div class="slds-form-element__control">
+                    <lightning-input type="text" label="Email" disabled={disableBtn} ></lightning-input>
+                </div>
+              </div>
+ 
+              <div class="slds-form-element slds-m-bottom--small">               
+                <div class="slds-form-element__control">
+                    <lightning-input type="text" label="Phone" disabled={disableBtn} ></lightning-input>
+                </div>
+              </div>
+ 
+              <div class="slds-form-element slds-m-bottom--small">               
+                <div class="slds-form-element__control">
+                    <lightning-input type="text" label="City" disabled={disableBtn} ></lightning-input>
+                </div>
+              </div>
+ 
+              <div class="slds-form-element slds-m-bottom--small">               
+                <div class="slds-form-element__control">
+                    <lightning-input type="text" label="Country" disabled={disableBtn} ></lightning-input>
+                </div>
+              </div>
+ 
+              <div class="slds-form-element slds-m-bottom--small">               
+                <div class="slds-form-element__control">
+                    <lightning-input type="text" label="Pincode" disabled={disableBtn} ></lightning-input>
+                </div>
+              </div>
+              </div>
+              </lightning-card>
+            </template> 
+            <lightning-card>           
+              <div class="slds-form-element" style="text-align: center;">
+                <lightning-input label="Disable Input" type="checkbox" checked={ischecked} value={inputVal} onchange={handleChange}></lightning-input>
+                
+              </div>
+            
+      
+ 
+ 
+</lightning-card>
+
+</template>

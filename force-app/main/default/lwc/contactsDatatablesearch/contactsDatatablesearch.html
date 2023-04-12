@@ -1,0 +1,35 @@
+<template>
+    <lightning-card variant="Narrow">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item
+                size="12"
+                padding="around-small"
+            >
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <td colspan="6">
+                                <lightning-input
+                                    type="search"
+                                    name="keyword"
+                                    variant="label-hidden"
+                                    value={searchvalue}
+                                    placeholder="Search contacts by name..."
+                                    onchange={handleChange}
+                                    required
+                                ></lightning-input>
+                            </td>
+                            <td colspan="3">
+                              <lightning-button-icon icon-name="utility:refresh" alternative-text="Refresh" title="Refresh" onclick = {handleRefresh} ></lightning-button-icon>
+                            </td>
+                            <td colspan="3">
+                              <lightning-button variant="brand" label="Search" title="Search Contacts" onclick = {handleSearch} ></lightning-button>
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    <c-contacts-datatable searchkey={searchvalue} record-id = {recordId} ></c-contacts-datatable>
+</template>

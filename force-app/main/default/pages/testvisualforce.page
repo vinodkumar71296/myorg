@@ -1,0 +1,11 @@
+<apex:page >
+    <div style="background-color: green;">   
+    <apex:outputLink value="{!URLFOR($Action.Attachment.Download, '00P5j00000BZmUR')}" target="_blank"><span style="color: white;">Download</span></apex:outputLink>
+    </div>
+    <br/>
+    <a href="{!URLFOR($Action.Attachment.Download, '00P5j00000BZmUR')}" class="btn btn-info">
+        <span class="glyphicon glyphicon-save-file"></span> Download </a>
+    <br/><br/>
+    <a href="#" class="btn btn-info" onclick="return window.open('{!URLFOR($Action.Attachment.Download, '00P5j00000BZmUR')}','_top');">
+        <span class="glyphicon glyphicon-save-file"></span> Preview</a>
+</apex:page>

@@ -1,0 +1,38 @@
+<template>
+	<lightning-card title="Active Users" icon-name="standard:person_account">
+		<div class="slds-card__body_inner">
+			<!-- Start bear list -->
+			<template if:true={users}>
+				<lightning-layout multiple-rows="true" pull-to-boundary="small">
+					<template for:each={users} for:item="user">
+						<lightning-layout-item key={user.Id} size="4" class="slds-var-p-around_xxx-small">
+							<!-- Start bear tile -->
+							<lightning-card title={user.first_name} class="bear-tile">
+								<div class="slds-var-p-horizontal_small bear-tile-body">
+									<div class="slds-media">
+										<div class="slds-media__figure">
+											<img src={user.avatar} alt=" " class="bear-silhouette"/>
+										</div>
+										<div class="slds-media__body slds-media_center">
+											<p class="slds-var-m-bottom_xx-small">User First Name :{user.first_name}</p>
+											<p class="slds-var-m-bottom_xx-small">User Last Name:{user.last_name}</p>
+											<p class="slds-var-m-bottom_xx-small">Email: {user.email}</p>
+										</div>
+									</div>
+								</div>
+							</lightning-card>
+							<!-- End bear tile -->
+						</lightning-layout-item>
+					</template>
+				</lightning-layout>
+			</template>
+			<!-- End bear list -->
+			<!-- Data failed to load -->
+			<template if:true={error}>
+				<div class="slds-text-color_error">
+					An error occurred while loading the user list
+				</div>
+			</template>
+		</div>
+	</lightning-card>
+</template>

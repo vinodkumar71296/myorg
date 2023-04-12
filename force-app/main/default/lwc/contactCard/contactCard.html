@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Contacts" icon-name="standard:contact">
+        <lightning-button label="New" onclick={handleNewContact}></lightning-button>
+        <template if:true={contacts}>
+            <template for:each={contacts} for:item="contact">
+                <lightning-tile key={contact.Id} title={contact.Name}>
+                    <p>{contact.Phone}</p>
+                    <p>{contact.Email}</p>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col">
+                            <lightning-button-menu icon-name="utility:down" variant="border-filled" title="Actions">
+                                <lightning-menu-item label="Edit" value={contact.Id} onclick={handleEdit}></lightning-menu-item>
+                                <lightning-menu-item label="Delete" value={contact.Id} onclick={handleDelete}></lightning-menu-item>
+                            </lightning-button-menu>
+                        </div>
+                    </div>
+                </lightning-tile>
+            </template>
+        </template>
+    </lightning-card>
+</template>

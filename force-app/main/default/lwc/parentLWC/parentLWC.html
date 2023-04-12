@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+    <div >
+            <lightning-input type="text" label="Name" name="name" onchange={handleName} value={Name}></lightning-input>
+    </div>
+    <div >
+            <lightning-input type="text" label="Age" name="age" onchange={handleAge} value={Age}></lightning-input>
+    </div>
+
+    <div> 
+        <lightning-button variant="brand" label="Submit" title="Submit" onclick={callChildMethod} ></lightning-button>
+    </div>
+    </lightning-card>
+    <c-child-l-w-c></c-child-l-w-c>
+</template>

@@ -1,0 +1,116 @@
+<!--
+@description       : 
+@author            : ChangeMeIn@UserSettingsUnder.SFDoc
+@group             : 
+@last modified on  : 03-23-2023
+@last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Student Details">
+    <div class="slds-grid slds-wrap slds-gutters slds-var-m-around_medium">
+      <div class="slds-col slds-size_1-of-5">
+        <lightning-input
+          type="text"
+          label="Name"
+          name="name"
+          value={name}
+          onchange={handleInputChange}
+        ></lightning-input>
+      </div>
+      <div class="slds-col slds-size_1-of-5">
+        <lightning-input
+          type="number"
+          label="Age"
+          name="age"
+          value={age}
+          onchange={handleInputChange}
+        ></lightning-input>
+      </div>
+      <div class="slds-col slds-size_1-of-5">
+        <lightning-input
+          type="text"
+          label="Roll Number"
+          name="rollNumber"
+          value={rollNumber}
+          onchange={handleInputChange}
+        ></lightning-input>
+      </div>
+      <div class="slds-col slds-size_1-of-5">
+        <lightning-input
+          type="date"
+          label="Date of Birth"
+          name="dateOfBirth"
+          value={dateOfBirth}
+          onchange={handleInputChange}
+        ></lightning-input>
+      </div>
+      <div class="slds-col slds-size_1-of-5 slds-var-p-top_large">
+        <lightning-button
+          variant="success"
+          label="Save"
+          onclick={handleAddButtonClick}
+        ></lightning-button>
+      </div>
+    </div>
+    <div class="slds-text-color_error slds-var-m-top_small">
+      <div style="text-align: center">{errorMessage}</div>
+    </div>
+    <template if:true={isVisible}>
+      <table
+        class="slds-table slds-table_cell-buffer slds-table_bordered slds-var-m-top_medium"
+      >
+        <thead>
+          <tr class="slds-line-height_reset">
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Student Name">Name</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Student Age">Age</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Student Roll Number">
+                Roll Number
+              </div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Date of Birth">
+                Date of Birth
+              </div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Action">Action</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <template for:each={tableData} for:item="row">
+            <tr key={row.id}>
+              <td data-label="Student Name">
+                <div class="slds-truncate">{row.name}</div>
+              </td>
+              <td data-label="Student Age">
+                <div class="slds-truncate">{row.age}</div>
+              </td>
+              <td data-label="Student Roll Number">
+                <div class="slds-truncate">{row.rollNumber}</div>
+              </td>
+              <td data-label="Date of Birth">
+                <div class="slds-truncate">{row.dateOfBirth}</div>
+              </td>
+              <td data-label="Action">
+                <lightning-button-icon
+                  icon-name="utility:delete"
+                  alternative-text="Delete"
+                  title="Delete"
+                  data-row-id={row.id}
+                  onclick={handleDeleteButtonClick}
+                  ><label>Delete</label>
+                </lightning-button-icon>
+              </td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </template>
+  </lightning-card>
+</template>

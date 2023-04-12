@@ -1,0 +1,38 @@
+<template>
+    <lightning-card>
+        <div class="slds-box slds-theme_default">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+                <thead>
+                    <tr>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Contact Name">Contact Name</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Mobile Phone">Mobile Phone</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Department">Department</div>
+                            </th>
+                            <th class="" scope="col">
+                            <div class="slds-truncate" title="Email">Email</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Phone">Phone</div>
+                            </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={contacts} for:item="con">
+                        <tr key={con.Id}>
+                            <td>{con.Name}</td>
+                            <td>{con.MobilePhone}</td>
+                            <td>{con.Department}</td>
+                            <td>{con.Email}</td>
+                            <td>{con.Phone}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+</template>

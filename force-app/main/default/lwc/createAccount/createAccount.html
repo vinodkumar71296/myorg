@@ -1,0 +1,69 @@
+<template>
+    <lightning-card title="Click the below button to create account" icon-name="standard:account">
+
+        <!-- lightning button for open custom modal window -->
+        <lightning-button variant="brand"
+        label="Create Account"
+        title="Open Modal"
+        onclick={customShowModalPopup}
+        class="slds-align_absolute-center"></lightning-button>
+
+    <!-- modal start -->        
+    <template if:true={customFormModal}>
+
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open ">
+    <div class="slds-modal__container">
+    <!-- modal header start -->
+    <header class="slds-modal__header">
+        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={customHideModalPopup}>
+            <lightning-icon icon-name="utility:close"
+            alternative-text="close"
+            variant="inverse"
+            size="small" ></lightning-icon>
+            <span class="slds-assistive-text">Close</span>
+        </button>
+        <h2 class="slds-text-heading_medium slds-hyphenate">Create Account</h2>
+    </header>
+    <!-- modal body start -->
+    <div class="slds-modal__content slds-var-p-around_medium">
+
+        <div class="slds-m-around_large">
+        <div if:true={isLoading} class="slds-is-relative">
+             <lightning-spinner alternative-text="Loading" variant="brand" size="medium">
+             </lightning-spinner>
+        </div>
+        </div>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_6-of-12 slds-var-p-horizontal_medium slds-var-m-bottom_medium">
+            <lightning-input type ="text" label="Name" name="nameval" onchange={callMe}></lightning-input>
+        </div>
+        <div class="slds-col slds-size_6-of-12 slds-var-p-horizontal_medium slds-var-m-bottom_medium">
+            <lightning-input type ="text" label="Phone" name="phoneval" onchange={callMe}></lightning-input>
+        </div>
+        <div class="slds-col slds-size_6-of-12 slds-var-p-horizontal_medium slds-var-m-bottom_medium">
+              <lightning-combobox name="industryval" 
+                                label="Industry" 
+                                value={StageValue}
+                                options={IndustryPicklist.data.values}
+                                onchange={callMe} 
+                                >
+            </lightning-combobox>
+        </div>
+        <div class="slds-col slds-size_6-of-12 slds-var-p-horizontal_medium slds-var-m-bottom_medium">
+            <lightning-input type = "text" label="Website" name="websiteval" onchange={callMe}></lightning-input>
+        </div>
+    </div>
+    <!-- modal footer start-->
+    <footer class="slds-modal__footer">
+        <lightning-button class="slds-button" variant="destructive" label="Cancel" title="Cancel" onclick={customHideModalPopup}></lightning-button>
+        <lightning-button class="slds-button" variant="brand" label="Save" title="Save" onclick={createAccount}></lightning-button>
+    </footer>
+    </div>
+    </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open">
+    </div>
+    </template>
+    <!-- modal end -->
+    </lightning-card> 
+</template>

@@ -1,0 +1,62 @@
+<template>
+    <div class="slds-box slds-p-top_small" style="background-color: white;">
+        <div class="slds-box slds-m-bottom_x-large">
+            <lightning-record-edit-form object-api-name="Contact" id="createContactForm" >
+                    <div class="slds-p-bottom_x-small">
+                        <label for="account">Select Account:</label>
+                    </div>
+                <lightning-input-field input-label="Select Account:" id="account" field-name="AccountId" value={selectedAccount} variant="label-hidden" onchange={handleAccountSelection} required> </lightning-input-field>
+            </lightning-record-edit-form>
+        </div>
+        <lightning-card icon-name="standard:contact" title="Create Contact" >
+            <!-- Table -->
+            <table class="slds-table slds-table_bordered slds-no-row-hover slds-table_cell-buffer slds-p-vertical_small" role="grid">
+                <thead>
+                <tr>
+                    <th scope="col" height="22" style="width: 3rem">S.No.</th>
+                    <th scope="col" height="22">First Name</th>
+                    <th scope="col" height="22">Last Name</th>
+                    <th scope="col" height="22">Email</th>
+                    <th scope="col" height="22" style="width: 3rem"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <template for:each={listOfContacts} for:item="rec">
+                    <tr key={rec} class="slds-hint-parent">
+                        <td style="font-weight: bold">
+                            <lightning-formatted-number value={rec.index}></lightning-formatted-number>.
+                        </td>
+
+                        <td>
+                            <lightning-input type="text" variant="label-hidden" label="" data-id={rec.index} name="FirstName" value={rec.FirstName} onchange={handleInputChange} required></lightning-input>
+                        </td>
+
+                        <td>
+                            <lightning-input type="text" variant="label-hidden" label="" data-id={rec.index} name="LastName" value={rec.LastName} onchange={handleInputChange} required></lightning-input>
+                        </td>
+
+                        <td>
+                            <lightning-input type="text" variant="label-hidden" label="" data-id={rec.index} name="Email" value={rec.Email} onchange={handleInputChange} required></lightning-input>
+                        </td>
+
+                        <td>
+                            <lightning-button-icon icon-name="utility:add" alternative-text="Add" title="Add" name={rec.index} onclick={addNewRow}></lightning-button-icon>
+                            <template if:true={isVisible}>
+                            <lightning-button-icon icon-name="utility:delete" alternative-text="Remove" title="Remove" name= {rec.index} onclick={removeRow}></lightning-button-icon>
+                            </template>
+                        </td>
+                    </tr>
+                </template>
+                </tbody>
+            </table>
+            <div class="slds-p-left_small slds-p-vertical_small">
+                <lightning-button class="slds-p-right_small" variant="destructive" label="Delete all rows" title="delete all rows" icon-name="utility:recycle_bin_full" onclick={removeAllRows}></lightning-button>
+            </div>
+
+            <!-- Footer -->
+            <div slot="footer" class="slds-p-left_small slds-p-vertical_small slds-m-bottom_large" >
+                <lightning-button icon-name="utility:save" variant="success" label="Save" title="Save Contacts" onclick={createContacts}></lightning-button>
+            </div> 
+            </lightning-card>
+    </div>
+</template>

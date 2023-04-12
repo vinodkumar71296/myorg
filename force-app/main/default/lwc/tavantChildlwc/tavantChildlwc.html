@@ -1,0 +1,14 @@
+<template>
+<lightning-card  title = "Contact Details" icon-name="standard:contact">
+     <div >
+            <lightning-input type="text" label="Name" name="name" onchange={handleName} value={Name}></lightning-input>
+    </div>
+    <div >
+            <lightning-input type="text" label="Age" name="age" onchange={handleAge} value={Age}></lightning-input>
+    </div>
+    
+    <div> 
+        <lightning-button variant="brand" label="Submit" title="Submit" onclick={callMe} ></lightning-button>
+    </div>
+</lightning-card>
+</template>

@@ -1,0 +1,30 @@
+<aura:component controller="AccountApex" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:attribute  name="accountList" type="list"/>
+    <aura:attribute name="selectedAccount" type="account"/>
+    <aura:attribute name="contactList" type="list"/>
+    <aura:attribute name="opportunityList" type="list"/> 
+    
+    <lightning:card>
+   <div class="slds-p-around_x-small">
+    <lightning:select name="selectItem" label="Select Account" aura:id="ac" onchange="{!c.getDetail}" >
+        <aura:iteration items="{!v.accountList}" var="acc">
+            <option label="{!acc.Name}" value="{!acc.Id}" />
+        </aura:iteration>
+    </lightning:select>
+    
+    <lightning:select label="contact list" >
+    <aura:iteration items="{!v.contactList}" var="con">
+        <option label="{!con.LastName}" value="{!con.Id}"/>  
+    </aura:iteration> 
+   </lightning:select>
+    
+    <lightning:select    label="Opportunity list" >
+    <aura:iteration items="{!v.opportunityList}" var = "op">
+        <option label="{!op.Name}" value="{!op.Id}"/>    
+    </aura:iteration>
+     </lightning:select>
+    </div>
+    </lightning:card>
+</aura:component>

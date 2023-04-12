@@ -1,0 +1,35 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-20-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card class="slds-var-m-around_medium" title="I am child component">
+    <div class="slds-var-m-around_medium">
+      <lightning-input
+        type="text"
+        variant="standard"
+        name="firstinput"
+        label="Child Input Text 1"
+        placeholder="type here..."
+        onchange={callMe}
+      ></lightning-input>
+      <lightning-input
+        type="text"
+        variant="standard"
+        name="secondinput"
+        label="Child Input Text 2"
+        placeholder="type here..."
+        onchange={callMe}
+      ></lightning-input>
+      <div class="slds-var-p-bottom_medium slds-var-p-top_medium">
+        <b>Parent Input Text 1:</b> {getparentfirstinput}
+      </div>
+      <div class="slds-var-p-bottom_medium slds-var-p-top_medium">
+        <b>Parent Input Text 2:</b> {getparentsecondinput}
+      </div>
+    </div>
+  </lightning-card>
+</template>

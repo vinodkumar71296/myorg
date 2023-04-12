@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Starting_Stage__c</fullName>
+    <externalId>false</externalId>
+    <label>Starting Stage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Investigations</fullName>
+                <default>false</default>
+                <label>Investigations</label>
+            </value>
+            <value>
+                <fullName>Negotiations</fullName>
+                <default>false</default>
+                <label>Negotiations</label>
+            </value>
+            <value>
+                <fullName>Closed-Lost</fullName>
+                <default>false</default>
+                <label>Closed-Lost</label>
+            </value>
+            <value>
+                <fullName>Closed-Active</fullName>
+                <default>false</default>
+                <label>Closed-Active</label>
+            </value>
+            <value>
+                <fullName>Closed Transition</fullName>
+                <default>false</default>
+                <label>Closed Transition</label>
+            </value>
+            <value>
+                <fullName>Closed Expired</fullName>
+                <default>false</default>
+                <label>Closed Expired</label>
+            </value>
+            <value>
+                <fullName>Closed Terminated</fullName>
+                <default>false</default>
+                <label>Closed Terminated</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

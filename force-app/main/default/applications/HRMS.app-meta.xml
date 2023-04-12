@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#005C8E</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>HRMS app manages candidate&apos;s profiles and recruits employees for the company</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>HRMS</label>
+    <navType>Standard</navType>
+    <tabs>Canditate__c</tabs>
+    <tabs>Position__c</tabs>
+    <tabs>Youtube_Video_Detail__c</tabs>
+    <tabs>Site__c</tabs>
+    <tabs>Amendment__c</tabs>
+    <tabs>Site_Amendment_Association__c</tabs>
+    <tabs>Notification__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>HRMS_UtilityBar</utilityBar>
+</CustomApplication>

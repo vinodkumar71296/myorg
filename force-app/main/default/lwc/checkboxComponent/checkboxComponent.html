@@ -1,0 +1,25 @@
+<template>
+    <div
+    style="
+      background-color: white;
+      border: 1px solid lightgray;
+      border-radius: 4px;
+      padding: 1rem;
+    "
+    >
+   </div>
+   <!-- 
+  <lightning-input type="text" label="FirstName"  class="fname"></lightning-input>
+  <lightning-input type="text" label="LastName" class="lname"></lightning-input>
+  <lightning-button label="Disable" variant="brand" onclick={handleClick}></lightning-button> -->
+
+  
+    <lightning-card title="Custom Validations In Lightning Web Components">
+        <lightning-input class="checkCmp" type="checkbox"  label="checkbox" ></lightning-input>
+        <lightning-input class="nameCmp" label="Enter Name" type="string"></lightning-input>
+        <lightning-input class="dateCmp" label="Enter Date" type="date"></lightning-input><br/><br/>
+        <lightning-button class="slds-align_absolute-center" label="Search" variant="brand" onclick={testTheData}></lightning-button>
+    </lightning-card>
+    
+    
+</template>

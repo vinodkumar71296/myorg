@@ -1,0 +1,24 @@
+<template >
+  <lightning-card>
+    <div style="padding: 20px">
+        <div style="margin-bottom: 10px">
+        <label for="categorySelect" >Select a category:</label>
+        </div>
+        <select id="categorySelect"  onchange={handleCategoryChange} value={selectedCategory}>
+            <option value="luxury">Luxury</option>
+            <option value="sedan">Sedan</option>
+            <option value="sports">Sports</option>
+            <option value="cabs">Cabs</option>
+            <option value="van">Van</option>
+        </select>
+        <div style="padding-top: 10px">
+        <ul>
+            <template for:each={cars} for:item="car">
+                <li key={car.make}>{car.make}</li>
+                <li key={car.model}>{car.model}</li>
+            </template>
+        </ul>
+        </div>
+    </div>
+  </lightning-card>
+</template>
